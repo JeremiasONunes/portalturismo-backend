@@ -4,6 +4,15 @@ const app = express();
 const sequelize = require('./config/db');
 const User = require('./models/User');
 const Contact = require('./models/Contact');
+const cors = require('cors');
+
+app.use(cors());
+
+// ou, para liberar só seu frontend:
+app.use(cors({
+  origin: 'http://localhost:5173'  
+}));
+
 
 
 app.use(express.json());
