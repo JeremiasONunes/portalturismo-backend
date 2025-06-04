@@ -30,9 +30,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-// ✳️ Todas as rotas abaixo exigem autenticação
-router.use(authMiddleware);
-
 // 🔐 Listar todos os usuários
 router.get('/', async (req, res) => {
   try {
