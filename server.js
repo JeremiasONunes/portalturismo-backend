@@ -10,7 +10,7 @@ app.use(cors());
 
 // ou, para liberar só seu frontend:
 app.use(cors({
-  origin: 'http://localhost:5173', // ou '*', mas não recomendado em produção
+  origin: '*', // ou '*', mas não recomendado em produção
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'] // ajuste se precisar
 }));
