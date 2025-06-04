@@ -2,9 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const sequelize = require('./config/db');
-
 const User = require('./models/User');
 const Contact = require('./models/Contact');
+
 
 app.use(express.json());
 
