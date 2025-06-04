@@ -23,6 +23,7 @@ sequelize.authenticate()
 const express = require('express');
 const app = express();
 const sequelize = require('./config/db');
+const authRoutes = require('./routes/authRoutes');
 
 // Importa os modelos (opcional, já sincronizados no sequelize.sync())
 const User = require('./models/User');
@@ -41,6 +42,8 @@ app.get('/', (req, res) => res.send('API funcionando'));
 // Rotas da API
 app.use('/api/users', userRoutes);       // Rotas CRUD para usuários
 app.use('/api/contacts', contactRoutes); // Rotas para contato (cadastrar e listar)
+
+app.use('/api/auth', authRoutes);
 
 // Porta que o servidor vai escutar
 const PORT = process.env.PORT || 5000;
